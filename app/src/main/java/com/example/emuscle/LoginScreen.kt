@@ -3,18 +3,16 @@ package com.example.emuscle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
-class MainActivity : AppCompatActivity() {
-
+class LoginScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
+        setContentView(R.layout.activity_login_screen)
     }
-  //  fun timer() {
-    //    val intent = Intent(this, LoginScreen::class.java)
-      //  startActivity(intent)
-   // }
 
+    fun login() {
+        val intent = Intent(this, MainMenu::class.java)
+        startActivity(intent)
+    }
 }

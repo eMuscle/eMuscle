@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">eMuscle</string>
+    <string name="program">program</string>
+    <string name="calendar">Calendar</string>
+    <string name="profile">profile</string>
+    <string name="create">Create</string>
+    <string name="login">Login</string>
 </resources>
