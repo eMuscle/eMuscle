@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMuscle">
         <activity
+            android:name=".CalendarDay"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar"
+            android:exported="false" />
+        <activity
             android:name=".MainMenu"
             android:exported="false" />
         <activity
