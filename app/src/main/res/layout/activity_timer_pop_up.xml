@@ -54,7 +54,7 @@
                 android:layout_width="307dp"
                 android:layout_height="64dp"
                 android:background="#888a8c"
-                android:text="Start"
+                android:text="Go Back"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"

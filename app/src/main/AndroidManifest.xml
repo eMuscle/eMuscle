@@ -11,7 +11,8 @@
         android:theme="@style/Theme.EMuscle">
         <activity
             android:name=".TimerPopUp"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme_translucent"/>
         <activity
             android:name=".CalendarDay"
             android:exported="false" />
