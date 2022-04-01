@@ -30,16 +30,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buCreateAcc"
+            android:background="@drawable/shape"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:text="@string/create" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buLogin"
+            android:background="@drawable/shape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
