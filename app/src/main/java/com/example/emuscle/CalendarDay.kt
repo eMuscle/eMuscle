@@ -1,5 +1,6 @@
 package com.example.emuscle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -20,7 +21,13 @@ class CalendarDay : AppCompatActivity() {
         val btnStartStop = findViewById<Button>(R.id.buTimer)
         val timer = findViewById<Chronometer>(R.id.view_timer)
 
+        val popup = findViewById<Button>(R.id.timerbutton)
 
+        popup.setOnClickListener {
+            val intent = Intent(this, TimerPopUp::class.java)
+
+            startActivity(intent)
+        }
 
         btnStartStop?.setOnClickListener(object: View.OnClickListener {
             var isWorking = false

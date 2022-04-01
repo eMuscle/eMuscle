@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMuscle">
         <activity
+            android:name=".TimerPopUp"
+            android:exported="false" />
+        <activity
             android:name=".CalendarDay"
             android:exported="false" />
         <activity
