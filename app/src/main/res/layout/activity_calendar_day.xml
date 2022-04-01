@@ -20,48 +20,133 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/emusclebackground" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="196dp"
-        android:layout_height="38dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
-
     <LinearLayout
-        android:layout_width="223dp"
-        android:layout_height="51dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.204">
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5">
 
-        <Chronometer
-            android:id="@+id/view_timer"
-            android:layout_width="96dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/tvExercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/exercise"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColorHint="#424242"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/tvSets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/sets"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColorHint="#424242"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/tvReps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/reps"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColorHint="#424242"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/tvKg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="@string/kg"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColorHint="#424242"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buAddExercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/shape"
+                android:text="@string/add_new_exercise" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="223dp"
+            android:layout_height="51dp"
+            android:orientation="horizontal">
+
+            <Chronometer
+                android:id="@+id/view_timer"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:countDown="true"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                tools:targetApi="24" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buTimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape"
+                android:text="@string/start" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="196dp"
+            android:layout_height="38dp"
+            android:text=""
             android:textAlignment="center"
-            android:textSize="25sp"
-            android:countDown="true"
-            tools:targetApi="24" />
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buTimer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape"
-            android:text="Start"
-            android:layout_marginStart="10dp"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
