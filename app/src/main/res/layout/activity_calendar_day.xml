@@ -64,4 +64,17 @@
             android:text="Start"
             android:layout_marginStart="10dp"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/timerbutton"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        app:icon="@android:drawable/ic_lock_idle_alarm"
+        app:iconSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 </androidx.constraintlayout.widget.ConstraintLayout>

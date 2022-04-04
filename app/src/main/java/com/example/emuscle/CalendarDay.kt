@@ -1,12 +1,15 @@
 package com.example.emuscle
 
 import android.os.*
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.SystemClock
 import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.Chronometer.OnChronometerTickListener
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 
 
 class CalendarDay : AppCompatActivity() {
@@ -37,6 +40,13 @@ class CalendarDay : AppCompatActivity() {
                 //Set vibration or sound
 
             }
+
+        val popup = findViewById<Button>(R.id.timerbutton)
+
+        popup.setOnClickListener {
+            val intent = Intent(this, TimerPopUp::class.java)
+
+            startActivity(intent)
         }
 
         btnStartStop?.setOnClickListener(object: View.OnClickListener {
