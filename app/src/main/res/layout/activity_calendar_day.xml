@@ -34,37 +34,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />
 
-    <LinearLayout
-        android:layout_width="223dp"
-        android:layout_height="51dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.204">
-
-        <Chronometer
-            android:id="@+id/view_timer"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:countDown="true"
-            tools:targetApi="24" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buTimer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape"
-            android:text="Start"
-            android:layout_marginStart="10dp"/>
-    </LinearLayout>
-
     <Button
         android:id="@+id/timerbutton"
         android:layout_width="61dp"

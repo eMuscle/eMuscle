@@ -1,66 +1,91 @@
 package com.example.emuscle
 
-
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.ArgbEvaluator
-import android.animation.ValueAnimator
-import android.app.Activity
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
-import android.view.animation.DecelerateInterpolator
+import android.os.CountDownTimer
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.graphics.ColorUtils
 
 
 class TimerPopUp : AppCompatActivity() {
+
+    private val start = 60000L
+    var timer = start
+    private lateinit var countDownTimer: CountDownTimer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         overridePendingTransition(0, 0)
         setContentView(R.layout.activity_timer_pop_up)
-        val popUpBackButton = findViewById<Button>(R.id.popup_window_button)
-
-        // Close the Popup Window when you press the button
-        popUpBackButton.setOnClickListener {
-            onBackPressed()
-        }
-
-    }
-
-    //Back Button animation and activity close.
-    override fun onBackPressed() {
+        val popUpStartButton = findViewById<Button>(R.id.popup_window_start_button)
         val popupWindowBackground = findViewById<ConstraintLayout>(R.id.popup_window_background)
         val popupWindowBorder = findViewById<CardView>(R.id.popup_window_view_with_border)
-        // Fade animation for the background of Popup Window when you press the back button
-        val alpha = 100 // between 0-255
-        val alphaColor = ColorUtils.setAlphaComponent(Color.parseColor("#000000"), alpha)
-        val colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), alphaColor, Color.TRANSPARENT)
-        colorAnimation.duration = 500 // milliseconds
-        colorAnimation.addUpdateListener { animator ->
-            popupWindowBackground.setBackgroundColor(
-                animator.animatedValue as Int
-            )
+        val timeInput = findViewById<TextView>(R.id.timeInput)
+        val plusButton = findViewById<Button>(R.id.button_plus)
+        val minusButton = findViewById<Button>(R.id.button_minus)
+
+        // Close the Popup Window when you press outside of CardView
+        popupWindowBackground.setOnClickListener {
+            onBackPressed()
+        }
+        popupWindowBorder.setOnClickListener {
+            //This is empty but necessary so that when clicked on CardView, it doesn't close
         }
 
-        // Fade animation for the Popup Window when you press the back button
-        popupWindowBorder.animate().alpha(0f).setDuration(500).setInterpolator(
-            DecelerateInterpolator()
-        ).start()
-
-        // After animation finish, close the Activity
-        colorAnimation.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator) {
-                finish()
-                overridePendingTransition(0, 0)
+        popUpStartButton.setOnClickListener {
+            if(popUpStartButton.text == "Start") {
+                startTimer(timeInput)
+                popUpStartButton.text = "Pause"
+            } else {
+                pauseTimer()
+                popUpStartButton.text = "Start"
             }
-        })
-        colorAnimation.start()
+        }
+        plusButton.setOnClickListener {
+            if(popUpStartButton.text == "Start")
+                timeInput.text = (timeInput.text.toString().toInt() + 10).toString()
+        }
+        minusButton.setOnClickListener {
+            if(timeInput.text.toString().toInt() >= 10)
+                timeInput.text = (timeInput.text.toString().toInt() - 10).toString()
+        }
+    }
+
+    private fun startTimer(input : TextView) {
+        timer = input.text.toString().toLong() * 1000
+
+        countDownTimer = object : CountDownTimer(timer,1000){
+            //end of timer
+            override fun onFinish() {
+                Toast.makeText(this@TimerPopUp,"Time to work!",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                timer = millisUntilFinished
+                setTextTimer(input)
+            }
+        }.start()
+    }
+
+    private fun pauseTimer() {
+        countDownTimer.cancel()
+    }
+
+    fun setTextTimer(input : TextView) {
+
+        val s = (timer / 1000)
+        val format = String.format("%02d", s)
+
+        input.text = format
+    }
+
+    //Back Button activity close.
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 
 
