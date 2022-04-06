@@ -4,7 +4,7 @@
     <corners
         android:radius="20dp" />
     <gradient
-        android:startColor="@color/button_color"
+        android:startColor="@color/button_color4"
         android:centerColor="@color/button_color3"
         android:endColor="@color/button_color"
         android:gradientRadius="290dp"

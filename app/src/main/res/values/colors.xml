@@ -10,5 +10,6 @@
     <color name="button_color">#c2c8cc</color>
     <color name="button_color2">#888a8c</color>
     <color name="button_color3">#ABABAB</color>
+    <color name="button_color4">#8D8D8D</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>

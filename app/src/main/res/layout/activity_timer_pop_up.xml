@@ -119,6 +119,8 @@
         android:layout_height="64dp"
         android:layout_marginBottom="184dp"
         android:background="@drawable/shape2"
+        android:elevation="10dp"
+        android:shadowRadius="10"
         android:text="Reset"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
