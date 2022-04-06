@@ -26,6 +26,7 @@ class TimerPopUp : AppCompatActivity() {
         val timeInput = findViewById<TextView>(R.id.timeInput)
         val plusButton = findViewById<Button>(R.id.button_plus)
         val minusButton = findViewById<Button>(R.id.button_minus)
+        val resetButton = findViewById<Button>(R.id.reset_button)
 
         // Close the Popup Window when you press outside of CardView
         popupWindowBackground.setOnClickListener {
@@ -52,6 +53,13 @@ class TimerPopUp : AppCompatActivity() {
             if(timeInput.text.toString().toInt() >= 10)
                 timeInput.text = (timeInput.text.toString().toInt() - 10).toString()
         }
+
+        resetButton.setOnClickListener {
+            countDownTimer.cancel()
+            timeInput.text = 30.toString()
+            popUpStartButton.text = "Start"
+        }
+
     }
 
     private fun startTimer(input : TextView) {
@@ -81,6 +89,8 @@ class TimerPopUp : AppCompatActivity() {
 
         input.text = format
     }
+
+
 
     //Back Button activity close.
     override fun onBackPressed() {
