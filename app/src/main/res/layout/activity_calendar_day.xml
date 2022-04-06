@@ -33,120 +33,16 @@
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageView5">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/tvExercise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/exercise"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColorHint="#424242"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/tvSets"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:hint="@string/sets"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textColorHint="#424242"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/tvReps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:hint="@string/reps"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColorHint="#424242"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/tvKg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:hint="@string/kg"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:textColorHint="#424242"
-                android:textSize="22sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buAddExercise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:background="@drawable/shape"
-                android:text="@string/add_new_exercise" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="223dp"
-            android:layout_height="51dp"
-            android:orientation="horizontal">
-
-            <Chronometer
-                android:id="@+id/view_timer"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:countDown="true"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                tools:targetApi="24" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buTimer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape"
-                android:text="@string/start" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="196dp"
-            android:layout_height="38dp"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#000000"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/timerbutton"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        app:icon="@android:drawable/ic_lock_idle_alarm"
+        app:iconSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 </androidx.constraintlayout.widget.ConstraintLayout>
