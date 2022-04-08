@@ -3,6 +3,7 @@
     package="com.example.emuscle">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMuscle">
         <activity
+            android:name=".ExercisePopUp"
+            android:exported="false"
+            android:theme="@style/AppTheme_translucent"
+            />
+
+        <activity
             android:name=".TimerPopUp"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent"/>
+            android:theme="@style/AppTheme_translucent" />
         <activity
             android:name=".CalendarDay"
             android:exported="false" />

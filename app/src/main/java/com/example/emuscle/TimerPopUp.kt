@@ -2,6 +2,7 @@ package com.example.emuscle
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -21,12 +22,15 @@ class TimerPopUp : AppCompatActivity() {
         overridePendingTransition(0, 0)
         setContentView(R.layout.activity_timer_pop_up)
         val popUpStartButton = findViewById<Button>(R.id.popup_window_start_button)
-        val popupWindowBackground = findViewById<ConstraintLayout>(R.id.popup_window_background)
-        val popupWindowBorder = findViewById<CardView>(R.id.popup_window_view_with_border)
+        val popupWindowBackground = findViewById<ConstraintLayout>(R.id.timer_window_background)
+        val popupWindowBorder = findViewById<CardView>(R.id.timer_window_view_with_border)
         val timeInput = findViewById<TextView>(R.id.timeInput)
         val plusButton = findViewById<Button>(R.id.button_plus)
         val minusButton = findViewById<Button>(R.id.button_minus)
         val resetButton = findViewById<Button>(R.id.reset_button)
+
+        // Hide status bar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Close the Popup Window when you press outside of CardView
         popupWindowBackground.setOnClickListener {
