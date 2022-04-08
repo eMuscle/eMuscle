@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/popup_window_background"
+    android:id="@+id/timer_window_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TimerPopUp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/popup_window_view_with_border"
+        android:id="@+id/timer_window_view_with_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/popup_window_background_container"
+            android:id="@+id/timer_window_background_container"
             android:layout_width="300dp"
             android:minHeight="230dp"
             android:background="#c2c8cc"
@@ -126,8 +126,8 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/popup_window_view_with_border"
+        app:layout_constraintEnd_toEndOf="@+id/timer_window_view_with_border"
         app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/popup_window_view_with_border" />
+        app:layout_constraintStart_toStartOf="@+id/timer_window_view_with_border" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

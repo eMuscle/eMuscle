@@ -18,6 +18,7 @@ class CalendarDay : AppCompatActivity() {
         val exerciseLayout = findViewById<LinearLayout>(R.id.exercise)
         val dateText = findViewById<TextView>(R.id.date)
 
+
         dateText.text = id
 
         addExerciseButton.setOnClickListener{
@@ -25,8 +26,15 @@ class CalendarDay : AppCompatActivity() {
             exerciseLayout.addView(exerciseView)
         }
 
-        val popup = findViewById<Button>(R.id.timerbutton)
-        popup.setOnClickListener {
+        val buttonExercise = findViewById<Button>(R.id.buttonForExercise)
+        buttonExercise.setOnClickListener{
+            val intent = Intent(this, ExercisePopUp::class.java)
+            startActivity(intent)
+        }
+
+
+        val timerPopup = findViewById<Button>(R.id.timerbutton)
+        timerPopup.setOnClickListener {
             val intent = Intent(this, TimerPopUp::class.java)
             startActivity(intent)
         }
