@@ -32,12 +32,13 @@ class CalendarDay : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         val timerPopup = findViewById<Button>(R.id.timerbutton)
         timerPopup.setOnClickListener {
             val intent = Intent(this, TimerPopUp::class.java)
             startActivity(intent)
         }
+
+        //Tee funktio joka hakee tiedot databasesta mitä exercise popupissa kirjoitettiin
 
     }
 }
