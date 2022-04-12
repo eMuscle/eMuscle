@@ -18,9 +18,25 @@ class ExerciseViewModel(application: Application): AndroidViewModel(application)
         readAllData = repository.readAllData
     }
 
+    fun getExercisesByDay(day: String): LiveData<List<Exercise>> {
+        return repository.getExercisesByDay(day)
+    }
+
     fun addExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addExercise(exercise)
+        }
+    }
+
+    fun updateExercise(exercise: Exercise) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateExercise(exercise)
+        }
+    }
+
+    fun deleteExercise(id: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteExercise(id)
         }
     }
 }

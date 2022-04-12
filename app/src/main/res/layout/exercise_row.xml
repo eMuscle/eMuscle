@@ -3,7 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:id="@+id/rowLayout">
 
     <TextView
         android:id="@+id/TVExercise"
@@ -15,7 +16,7 @@
 
     <TextView
         android:id="@+id/TVSets"
-        android:layout_width="wrap_content"
+        android:layout_width="30sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="25sp"
@@ -23,7 +24,7 @@
 
     <TextView
         android:id="@+id/TVReps"
-        android:layout_width="wrap_content"
+        android:layout_width="30sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="25sp"
@@ -31,7 +32,7 @@
 
     <TextView
         android:id="@+id/TVWeight"
-        android:layout_width="wrap_content"
+        android:layout_width="30sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="25sp"

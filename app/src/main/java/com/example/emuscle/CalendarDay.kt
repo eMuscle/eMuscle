@@ -18,7 +18,7 @@ class CalendarDay : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar_day)
 
-        val id = intent.getStringExtra("id")
+        val id = intent.getStringExtra("id").toString()
 
         val dateText = findViewById<TextView>(R.id.date)
 
@@ -30,9 +30,9 @@ class CalendarDay : AppCompatActivity() {
 
         //ExerciseViewModel
         mExerciseViewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
-        mExerciseViewModel.readAllData.observe(this, Observer { exercise ->
+        mExerciseViewModel.getExercisesByDay(id).observe(this) { exercise ->
             adapter.setData(exercise)
-        })
+        }
 
         dateText.text = id
 
