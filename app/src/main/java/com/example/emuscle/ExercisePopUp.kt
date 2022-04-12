@@ -19,6 +19,7 @@ class ExercisePopUp : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0, 0)
         setContentView(R.layout.activity_exercise_pop_up)
         val exerciseWindowBackground = findViewById<ConstraintLayout>(R.id.exercise_window_background)
         val exerciseWindowBorder = findViewById<CardView>(R.id.exercise_window_view_with_border)
