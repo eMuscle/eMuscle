@@ -10,9 +10,15 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         val btnCalendar = findViewById<Button>(R.id.buCalendar)
+        val btnDiet = findViewById<Button>(R.id.buDiet)
 
         btnCalendar.setOnClickListener{
             val intent = Intent(this, Calendar::class.java)
+            startActivity(intent)
+        }
+
+        btnDiet.setOnClickListener{
+            val intent = Intent(this, CalendarDiet::class.java)
             startActivity(intent)
         }
     }
