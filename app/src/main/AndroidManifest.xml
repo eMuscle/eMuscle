@@ -14,18 +14,19 @@
         <activity
             android:name=".ExerciseUpdate"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent" />
+            android:theme="@style/AppTheme_translucent"/>
         <activity
             android:name=".ExercisePopUp"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent" />
+            android:theme="@style/AppTheme_translucent"/>
         <activity
             android:name=".TimerPopUp"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent" />
+            android:theme="@style/AppTheme_translucent"/>
         <activity
             android:name=".CalendarDay"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".Calendar"
             android:exported="false" />

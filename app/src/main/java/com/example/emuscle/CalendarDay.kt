@@ -50,7 +50,5 @@ class CalendarDay : AppCompatActivity() {
         }
 
 
-        //Tee funktio joka hakee tiedot databasesta mitä exercise popupissa kirjoitettiin
-
     }
 }
