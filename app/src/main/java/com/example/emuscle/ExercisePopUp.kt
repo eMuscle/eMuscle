@@ -2,13 +2,21 @@ package com.example.emuscle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.ViewModelProvider
+import com.example.emuscle.database.Exercise
+import com.example.emuscle.database.ExerciseViewModel
 
 class ExercisePopUp : AppCompatActivity() {
+
+    private lateinit var mExerciseViewModel: ExerciseViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_pop_up)
@@ -20,8 +28,9 @@ class ExercisePopUp : AppCompatActivity() {
         val enterReps = findViewById<EditText>(R.id.editTextReps)
         val enterWeight = findViewById<EditText>(R.id.editTextWeight)
 
+        mExerciseViewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
+
         val id = intent.getStringExtra("id")
-        val db = DBController(this, null)
 
         // Hide status bar
         //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -36,20 +45,20 @@ class ExercisePopUp : AppCompatActivity() {
         }
 
         addButton.setOnClickListener{
-
             val exercise = enterExercise.text.toString()
             val sets = enterSets.text.toString()
             val reps = enterReps.text.toString()
             val weight = enterWeight.text.toString()
 
-            db.addExercise(id.toString(), exercise, sets, reps, weight)
+            if (inputCheck(exercise,sets,reps,weight)) {
+                val exerciseObject = Exercise(0,id.toString(),exercise, sets, reps, weight)
+                mExerciseViewModel.addExercise(exerciseObject)
+                Toast.makeText(this, "Added to database", Toast.LENGTH_LONG).show()
 
-            enterExercise.text.clear()
-            enterSets.text.clear()
-            enterReps.text.clear()
-            enterWeight.text.clear()
-
-            onBackPressed()
+                onBackPressed()
+            } else {
+                Toast.makeText(this, "Fill out all fields!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
     
@@ -57,5 +66,9 @@ class ExercisePopUp : AppCompatActivity() {
     override fun onBackPressed() {
         finish()
         overridePendingTransition(0, 0)
+    }
+
+    private fun inputCheck(exercise: String, sets: String, reps: String, weight: String): Boolean {
+        return !(TextUtils.isEmpty(exercise) || TextUtils.isEmpty(sets) || TextUtils.isEmpty(reps) || TextUtils.isEmpty(weight))
     }
 }

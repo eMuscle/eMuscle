@@ -2,60 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="10dp">
 
-    <EditText
-        android:id="@+id/tvExercise"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/TVExercise"
+        android:layout_width="220sp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:layout_weight="1"
-        android:ems="10"
-        android:hint="exercise"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#424242"
-        android:textSize="22sp" />
+        android:textSize="25sp"
+        android:text="TextView" />
 
-    <EditText
-        android:id="@+id/tvSets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="sets"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:textColorHint="#424242"
-        android:textSize="22sp" />
-
-    <EditText
-        android:id="@+id/tvReps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="reps"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColorHint="#424242"
-        android:textSize="22sp" />
-
-    <EditText
-        android:id="@+id/tvKg"
+    <TextView
+        android:id="@+id/TVSets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="kg"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColorHint="#424242"
-        android:textSize="22sp" />
+        android:textSize="25sp"
+        android:text="0" />
 
+    <TextView
+        android:id="@+id/TVReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/TVWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
 </LinearLayout>
