@@ -30,7 +30,7 @@ class TimerPopUp : AppCompatActivity() {
         val resetButton = findViewById<Button>(R.id.reset_button)
 
         // Hide status bar
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Close the Popup Window when you press outside of CardView
         popupWindowBackground.setOnClickListener {
