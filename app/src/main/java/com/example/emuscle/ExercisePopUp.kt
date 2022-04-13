@@ -19,7 +19,7 @@ class ExercisePopUp : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        overridePendingTransition(0, 0)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         setContentView(R.layout.activity_exercise_pop_up)
         val exerciseWindowBackground = findViewById<ConstraintLayout>(R.id.exercise_window_background)
         val exerciseWindowBorder = findViewById<CardView>(R.id.exercise_window_view_with_border)
@@ -66,7 +66,7 @@ class ExercisePopUp : AppCompatActivity() {
     //Back Button activity close.
     override fun onBackPressed() {
         finish()
-        overridePendingTransition(0, 0)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     private fun inputCheck(exercise: String, sets: String, reps: String, weight: String): Boolean {

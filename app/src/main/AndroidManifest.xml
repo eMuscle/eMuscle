@@ -30,10 +30,6 @@
             android:name=".CalendarDiet"
             android:exported="false" />
         <activity
-            android:name=".ExercisePopUp"
-            android:exported="false"
-            android:theme="@style/AppTheme_translucent" />
-        <activity
             android:name=".TimerPopUp"
             android:exported="false"
             android:theme="@style/AppTheme_translucent"/>
@@ -46,9 +42,6 @@
             android:exported="false" />
         <activity
             android:name=".MainMenu"
-            android:exported="false" />
-        <activity
-            android:name=".LoginScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
