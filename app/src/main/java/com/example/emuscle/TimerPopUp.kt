@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -42,37 +43,43 @@ class TimerPopUp : AppCompatActivity() {
 
         popUpStartButton.setOnClickListener {
             if(popUpStartButton.text == "Start") {
-                startTimer(timeInput)
+                startTimer(timeInput, popUpStartButton)
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(830, 180)
                 popUpStartButton.text = "Pause"
             } else {
                 pauseTimer()
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(550, 180)
                 popUpStartButton.text = "Start"
             }
         }
         plusButton.setOnClickListener {
             if(popUpStartButton.text == "Start")
-                timeInput.text = (timeInput.text.toString().toInt() + 10).toString()
+                timeInput.text = (timeInput.text.toString().toInt() + 5).toString()
         }
         minusButton.setOnClickListener {
-            if(timeInput.text.toString().toInt() >= 10)
-                timeInput.text = (timeInput.text.toString().toInt() - 10).toString()
+            if(popUpStartButton.text == "Start") {
+                if (timeInput.text.toString().toInt() > 5)
+                    timeInput.text = (timeInput.text.toString().toInt() - 5).toString()
+            }
         }
 
         resetButton.setOnClickListener {
-            countDownTimer.cancel()
             timeInput.text = 30.toString()
             popUpStartButton.text = "Start"
         }
 
     }
 
-    private fun startTimer(input : TextView) {
+    private fun startTimer(input : TextView, btn: Button) {
         timer = input.text.toString().toLong() * 1000
 
         countDownTimer = object : CountDownTimer(timer,1000){
             //end of timer
             override fun onFinish() {
                 Toast.makeText(this@TimerPopUp,"Time to work!",Toast.LENGTH_SHORT).show()
+                input.text = 30.toString()
+                btn.text = "Start"
+                btn.layoutParams = LinearLayout.LayoutParams(550, 180)
             }
 
             override fun onTick(millisUntilFinished: Long) {

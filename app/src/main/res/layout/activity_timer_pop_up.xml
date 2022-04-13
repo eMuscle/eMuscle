@@ -48,20 +48,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/popup_window_start_button"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="307dp"
-                android:layout_height="64dp"
-                android:background="#888a8c"
-                android:text="Start"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <TextView
                 android:id="@+id/inputTitle"
                 android:layout_width="wrap_content"
@@ -69,21 +55,22 @@
                 android:layout_marginEnd="24dp"
                 android:text="Seconds"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/popup_window_start_button"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/popup_window_title"
-                app:layout_constraintVertical_bias="0.606" />
+                app:layout_constraintVertical_bias="0.500" />
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="152dp"
                 android:layout_height="61dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/popup_window_start_button"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                 app:layout_constraintEnd_toStartOf="@+id/inputTitle"
-                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintHorizontal_bias="0.50"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/popup_window_title"
-                app:layout_constraintVertical_bias="0.666">
+                app:layout_constraintVertical_bias="0.5">
 
                 <Button
                     android:id="@+id/button_minus"
@@ -109,25 +96,37 @@
                     android:text="+" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <Button
+                    android:id="@+id/popup_window_start_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="65dp"
+                    android:background="#888a8c"
+                    android:text="Start"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/reset_button"
+                    android:layout_width="100dp"
+                    android:layout_height="65dp"
+                    android:background="#949799"
+                    android:text="Reset"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/reset_button"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="307dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="184dp"
-        android:background="@drawable/shape2"
-        android:elevation="10dp"
-        android:shadowRadius="10"
-        android:text="Reset"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/timer_window_view_with_border"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/timer_window_view_with_border" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
