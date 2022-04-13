@@ -2,6 +2,7 @@ package com.example.emuscle
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.LinearLayout
@@ -44,11 +45,11 @@ class TimerPopUp : AppCompatActivity() {
         popUpStartButton.setOnClickListener {
             if(popUpStartButton.text == "Start") {
                 startTimer(timeInput, popUpStartButton)
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(830, 180)
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 180)
                 popUpStartButton.text = "Pause"
             } else {
                 pauseTimer()
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(550, 180)
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 180)
                 popUpStartButton.text = "Start"
             }
         }
@@ -79,7 +80,7 @@ class TimerPopUp : AppCompatActivity() {
                 Toast.makeText(this@TimerPopUp,"Time to work!",Toast.LENGTH_SHORT).show()
                 input.text = 30.toString()
                 btn.text = "Start"
-                btn.layoutParams = LinearLayout.LayoutParams(550, 180)
+                btn.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 180)
             }
 
             override fun onTick(millisUntilFinished: Long) {
