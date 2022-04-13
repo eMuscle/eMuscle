@@ -19,6 +19,7 @@ class ExerciseUpdate : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         setContentView(R.layout.activity_exercise_update)
 
         val exerciseUpdateWindowBackground = findViewById<ConstraintLayout>(R.id.exerciseUpdate_window_background)
@@ -77,6 +78,6 @@ class ExerciseUpdate : AppCompatActivity() {
 
     override fun onBackPressed() {
         finish()
-        overridePendingTransition(0, 0)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }
