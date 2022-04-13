@@ -99,9 +99,10 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <Button
@@ -117,8 +118,8 @@
 
                 <Button
                     android:id="@+id/reset_button"
-                    android:layout_width="100dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="#949799"
                     android:text="Reset"
                     android:textAllCaps="false"
