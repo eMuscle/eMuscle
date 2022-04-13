@@ -53,7 +53,7 @@ class ExercisePopUp : AppCompatActivity() {
             if (inputCheck(exercise,sets,reps,weight)) {
                 val exerciseObject = Exercise(0,id.toString(),exercise, sets, reps, weight)
                 mExerciseViewModel.addExercise(exerciseObject)
-                Toast.makeText(this, "Added to database", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
 
                 onBackPressed()
             } else {
