@@ -28,7 +28,7 @@
             android:id="@+id/timer_window_background_container"
             android:layout_width="300dp"
             android:minHeight="230dp"
-            android:background="#c2c8cc"
+            android:background="#D1D1D1"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
 
