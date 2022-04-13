@@ -19,6 +19,20 @@
             android:name=".ExercisePopUp"
             android:exported="false"
             android:theme="@style/AppTheme_translucent"/>
+        <activity    
+            android:name=".DietPopUp"
+            android:exported="false"
+            android:theme="@style/AppTheme_translucent" />
+        <activity
+            android:name=".CalendarDietDay"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarDiet"
+            android:exported="false" />
+        <activity
+            android:name=".ExercisePopUp"
+            android:exported="false"
+            android:theme="@style/AppTheme_translucent" />
         <activity
             android:name=".TimerPopUp"
             android:exported="false"

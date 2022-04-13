@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calendar">
+    tools:context=".CalendarDiet">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.6"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/emusclebackground" />
 
     <CalendarView
-        android:id="@+id/calendarView"
+        android:id="@+id/calendarDietView"
         android:layout_width="400dp"
         android:layout_height="370dp"
         android:dateTextAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
@@ -34,16 +34,16 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvDiet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
-        android:text="Exercise Calendar"
+        android:text="Diet Calendar"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/calendarDietView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
