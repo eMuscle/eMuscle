@@ -18,7 +18,7 @@ data class Diet(
     val supper: String,
     val supperCal: Int,
     val snacks: String,
-    val SnacksCal: Int
+    val snacksCal: Int
 )
 
 

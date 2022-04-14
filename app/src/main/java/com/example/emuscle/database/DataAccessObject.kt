@@ -33,7 +33,7 @@ interface DataAccessObject {
     suspend fun deleteDiet(id: String)
 
     @Query("SELECT * FROM diet_table WHERE day = :day")
-    fun getDietByDay(day: String): LiveData<List<Diet>>
+    fun getDietByDay(day: String): LiveData<Diet>
 
 
 
