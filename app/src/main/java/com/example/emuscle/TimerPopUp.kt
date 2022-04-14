@@ -1,8 +1,8 @@
 package com.example.emuscle
 
+import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import kotlin.math.roundToInt
 
 
 class TimerPopUp : AppCompatActivity() {
@@ -44,11 +45,11 @@ class TimerPopUp : AppCompatActivity() {
         popUpStartButton.setOnClickListener {
             if(popUpStartButton.text == "Start") {
                 startTimer(timeInput, popUpStartButton)
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(830, 180)
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(dpToPx(300), dpToPx(65))
                 popUpStartButton.text = "Pause"
             } else {
                 pauseTimer()
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(550, 180)
+                popUpStartButton.layoutParams = LinearLayout.LayoutParams(dpToPx(200), dpToPx(65))
                 popUpStartButton.text = "Start"
             }
         }
@@ -79,7 +80,7 @@ class TimerPopUp : AppCompatActivity() {
                 Toast.makeText(this@TimerPopUp,"Time to work!",Toast.LENGTH_SHORT).show()
                 input.text = 30.toString()
                 btn.text = "Start"
-                btn.layoutParams = LinearLayout.LayoutParams(550, 180)
+                btn.layoutParams = LinearLayout.LayoutParams(dpToPx(200), dpToPx(65))
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -101,7 +102,11 @@ class TimerPopUp : AppCompatActivity() {
         input.text = format
     }
 
-
+    fun dpToPx(dp: Int): Int {
+        val density: Float = resources
+            .displayMetrics.density
+        return (dp.toFloat() * density).roundToInt()
+    }
 
     //Back Button activity close.
     override fun onBackPressed() {
