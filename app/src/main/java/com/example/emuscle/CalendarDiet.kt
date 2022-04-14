@@ -16,7 +16,7 @@ class CalendarDiet : AppCompatActivity() {
             val month = mont + 1
             val id = "$day/$month/$year"
             intent.putExtra("id", id)
-        startActivity(intent)
+            startActivity(intent)
         }
     }
 }

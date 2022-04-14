@@ -35,32 +35,32 @@ class CalendarDietDay : AppCompatActivity() {
         var tempDay = "null"
 
         mDietViewModel = ViewModelProvider(this)[DietViewModel::class.java]
-        mDietViewModel.getDietByDay(id).observe(this) { diet ->
+
+        val diet = mDietViewModel.getDietByDay(id)
             bfInput.append(diet.breakFast)
-            bfCal.append(diet.breakFastCal.toString())
+            bfCal.append(diet.breakFastCal)
             lInput.append(diet.lunch)
-            lCal.append(diet.lunchCal.toString())
+            lCal.append(diet.lunchCal)
             dinInput.append(diet.dinner)
-            dinCal.append(diet.dinnerCal.toString())
+            dinCal.append(diet.dinnerCal)
             supInput.append(diet.supper)
-            supCal.append(diet.supperCal.toString())
+            supCal.append(diet.supperCal)
             snackInput.append(diet.snacks)
-            snackCal.append(diet.snacksCal.toString())
+            snackCal.append(diet.snacksCal)
             tempDay = diet.day
-        }
 
         binding.buDietSave.setOnClickListener {
             val dietObject = Diet(0,id,
                 bfInput.text.toString(),
-                bfCal.text.toString().toInt(),
+                bfCal.text.toString(),
                 lInput.text.toString(),
-                lCal.text.toString().toInt(),
+                lCal.text.toString(),
                 dinInput.text.toString(),
-                dinCal.text.toString().toInt(),
+                dinCal.text.toString(),
                 supInput.text.toString(),
-                supCal.text.toString().toInt(),
+                supCal.text.toString(),
                 snackInput.text.toString(),
-                snackCal.text.toString().toInt()
+                snackCal.text.toString()
             )
             if(tempDay == "null") {
                 mDietViewModel.addDiet(dietObject)

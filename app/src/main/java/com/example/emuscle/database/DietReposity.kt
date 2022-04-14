@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 
 class DietRepository(private val dataAccessObject: DataAccessObject){
 
-    fun getDietByDay(day: String): LiveData<Diet> {
+    suspend fun getDietByDay(day: String): Diet {
         return dataAccessObject.getDietByDay(day)
     }
 

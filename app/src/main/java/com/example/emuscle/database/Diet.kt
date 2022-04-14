@@ -10,15 +10,15 @@ data class Diet(
     val id: Int,
     val day: String,
     val breakFast: String,
-    val breakFastCal: Int,
+    val breakFastCal: String,
     val lunch: String,
-    val lunchCal: Int,
+    val lunchCal: String,
     val dinner: String,
-    val dinnerCal: Int,
+    val dinnerCal: String,
     val supper: String,
-    val supperCal: Int,
+    val supperCal: String,
     val snacks: String,
-    val snacksCal: Int
+    val snacksCal: String
 )
 
 
