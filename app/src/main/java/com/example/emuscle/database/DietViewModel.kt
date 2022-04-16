@@ -17,10 +17,8 @@ class DietViewModel(application: Application): AndroidViewModel(application) {
         repository = DietRepository(dataAccessObject)
     }
 
-    fun getDietByDay(day: String): Diet {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.getDietByDay(day)
-        }
+    fun getDietByDay(day: String): LiveData<List<Diet>> {
+        return repository.getDietByDay(day)
     }
 
     fun addDiet(diet: Diet){

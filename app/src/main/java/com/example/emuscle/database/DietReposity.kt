@@ -2,9 +2,10 @@ package com.example.emuscle.database
 
 import androidx.lifecycle.LiveData
 
+
 class DietRepository(private val dataAccessObject: DataAccessObject){
 
-    suspend fun getDietByDay(day: String): Diet {
+    fun getDietByDay(day: String): LiveData<List<Diet>> {
         return dataAccessObject.getDietByDay(day)
     }
 

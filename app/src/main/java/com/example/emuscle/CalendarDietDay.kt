@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.emuscle.database.Diet
 import com.example.emuscle.database.DietViewModel
 import com.example.emuscle.databinding.ActivityCalendarDietDayBinding
@@ -22,54 +24,22 @@ class CalendarDietDay : AppCompatActivity() {
 
         val id = intent.getStringExtra("id").toString()
 
-        val bfInput = binding.BreakfastInput
-        val bfCal = binding.BreakfastCalories
-        val lInput = binding.LunchInput
-        val lCal = binding.LunchCalories
-        val dinInput = binding.DinnerInput
-        val dinCal = binding.DinnerCalories
-        val supInput = binding.SupperInput
-        val supCal = binding.SupperCalories
-        val snackInput = binding.SnackInput
-        val snackCal = binding.SnackCalories
-        var tempDay = "null"
+        //RecyclerView setup
+        val adapter = DietListAdapter()
+        val dietLayout = findViewById<RecyclerView>(R.id.diet_recycler_view)
+        dietLayout.adapter = adapter
+        dietLayout.layoutManager = LinearLayoutManager(this)
 
         mDietViewModel = ViewModelProvider(this)[DietViewModel::class.java]
 
-        val diet = mDietViewModel.getDietByDay(id)
-            bfInput.append(diet.breakFast)
-            bfCal.append(diet.breakFastCal)
-            lInput.append(diet.lunch)
-            lCal.append(diet.lunchCal)
-            dinInput.append(diet.dinner)
-            dinCal.append(diet.dinnerCal)
-            supInput.append(diet.supper)
-            supCal.append(diet.supperCal)
-            snackInput.append(diet.snacks)
-            snackCal.append(diet.snacksCal)
-            tempDay = diet.day
+        mDietViewModel.getDietByDay(id).observe(this) { diet ->
+            adapter.setData(diet)
+        }
 
-        binding.buDietSave.setOnClickListener {
-            val dietObject = Diet(0,id,
-                bfInput.text.toString(),
-                bfCal.text.toString(),
-                lInput.text.toString(),
-                lCal.text.toString(),
-                dinInput.text.toString(),
-                dinCal.text.toString(),
-                supInput.text.toString(),
-                supCal.text.toString(),
-                snackInput.text.toString(),
-                snackCal.text.toString()
-            )
-            if(tempDay == "null") {
-                mDietViewModel.addDiet(dietObject)
-                Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show()
-            } else {
-                mDietViewModel.updateDiet(dietObject)
-                Toast.makeText(this, "Updated!", Toast.LENGTH_SHORT).show()
-            }
+        binding.buttonForFood.setOnClickListener {
+            val intent = Intent(this, DietPopUp::class.java)
+            intent.putExtra("day", id)
+            startActivity(intent)
         }
     }
-
-    }
+}

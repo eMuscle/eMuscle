@@ -22,16 +22,16 @@
 
     <CalendarView
         android:id="@+id/calendarDietView"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="370dp"
         android:dateTextAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
         android:weekDayTextAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <TextView
         android:id="@+id/tvDiet"
