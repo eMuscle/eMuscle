@@ -20,4 +20,23 @@ interface DataAccessObject {
 
     @Query("SELECT * FROM exercise_table WHERE day = :day")
     fun getExercisesByDay(day: String): LiveData<List<Exercise>>
+
+    //Diet section starts
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addDiet(diet: Diet)
+
+    @Update
+    suspend fun updateDiet(diet: Diet)
+
+    @Query("DELETE FROM diet_table WHERE id = :id")
+    suspend fun deleteDiet(id: String)
+
+    @Query("SELECT * FROM diet_table WHERE day = :day")
+    suspend fun getDietByDay(day: String): Diet
+
+
+
+
+
 }
