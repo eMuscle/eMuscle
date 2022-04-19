@@ -1,15 +1,15 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
+import com.example.emuscle.R
 import com.example.emuscle.database.Exercise
 import com.example.emuscle.database.ExerciseViewModel
 

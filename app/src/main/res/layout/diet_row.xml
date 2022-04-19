@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/dietRowLayout">
+
+    <TextView
+        android:id="@+id/TVTime"
+        android:layout_width="90sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TVFood"
+        android:layout_width="160sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TVCalories"
+        android:layout_width="30sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
+
+</LinearLayout>

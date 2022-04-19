@@ -1,12 +1,12 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.emuscle.R
 import com.example.emuscle.database.Exercise
 import kotlinx.android.synthetic.main.exercise_row.view.*
 

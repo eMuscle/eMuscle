@@ -1,4 +1,4 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
+import com.example.emuscle.R
 import com.example.emuscle.database.Exercise
 import com.example.emuscle.database.ExerciseViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
