@@ -5,16 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Exercise::class, Diet::class], version = 1, exportSchema = false)
-abstract class ExerciseDB: RoomDatabase() {
+@Database(entities = [Exercise::class, Diet::class, User::class], version = 1, exportSchema = false)
+abstract class EmuscleDB: RoomDatabase() {
 
     abstract fun exerciseDao(): DataAccessObject
 
     companion object{
         @Volatile
-        private var INSTANCE: ExerciseDB? = null
+        private var INSTANCE: EmuscleDB? = null
 
-        fun getDB(context: Context): ExerciseDB {
+        fun getDB(context: Context): EmuscleDB {
             val tempInstance = INSTANCE
             if(tempInstance != null) {
                 return tempInstance
@@ -22,7 +22,7 @@ abstract class ExerciseDB: RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    ExerciseDB::class.java,
+                    EmuscleDB::class.java,
                     "exercise_db"
                 ).build()
                 INSTANCE = instance

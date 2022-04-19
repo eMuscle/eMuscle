@@ -13,7 +13,7 @@ class ExerciseViewModel(application: Application): AndroidViewModel(application)
     private val repository: ExerciseRepository
 
     init {
-        val dataAccessObject = ExerciseDB.getDB(application).exerciseDao()
+        val dataAccessObject = EmuscleDB.getDB(application).exerciseDao()
         repository = ExerciseRepository(dataAccessObject)
         readAllData = repository.readAllData
     }

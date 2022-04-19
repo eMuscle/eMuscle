@@ -2,7 +2,6 @@ package com.example.emuscle.database
 
 import androidx.lifecycle.LiveData
 
-
 class DietRepository(private val dataAccessObject: DataAccessObject){
 
     fun getDietByDay(day: String): LiveData<List<Diet>> {
