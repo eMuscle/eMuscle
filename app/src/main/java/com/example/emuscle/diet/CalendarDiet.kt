@@ -1,9 +1,11 @@
-package com.example.emuscle
+package com.example.emuscle.diet
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CalendarView
+import com.example.emuscle.R
+
 //import kotlinx.android.synthetic.main.activity_calendar_diet.*
 
 class CalendarDiet : AppCompatActivity() {

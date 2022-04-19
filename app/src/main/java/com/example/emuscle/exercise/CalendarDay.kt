@@ -1,14 +1,13 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.emuscle.R
 import com.example.emuscle.database.ExerciseViewModel
 
 class CalendarDay : AppCompatActivity() {

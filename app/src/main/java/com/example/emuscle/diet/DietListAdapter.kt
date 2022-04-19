@@ -1,4 +1,4 @@
-package com.example.emuscle
+package com.example.emuscle.diet
 
 import android.app.Activity
 import android.content.Intent
@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.emuscle.R
 import com.example.emuscle.database.Diet
+import com.example.emuscle.exercise.ListAdapter
 import kotlinx.android.synthetic.main.diet_row.view.*
 
 class DietListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {

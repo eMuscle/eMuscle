@@ -1,6 +1,5 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
-import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
@@ -10,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.emuscle.R
 import kotlin.math.roundToInt
 
 
