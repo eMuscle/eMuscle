@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMuscle">
         <activity
+            android:name=".profile.Profile"
+            android:exported="false" />
+        <activity
             android:name=".exercise.ExerciseUpdate"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent"/>
+            android:theme="@style/AppTheme_translucent" />
         <activity
             android:name=".exercise.ExercisePopUp"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent"/>
-        <activity    
+            android:theme="@style/AppTheme_translucent" />
+        <activity
             android:name=".diet.DietPopUp"
             android:exported="false"
             android:theme="@style/AppTheme_translucent" />
@@ -32,11 +35,11 @@
         <activity
             android:name=".exercise.TimerPopUp"
             android:exported="false"
-            android:theme="@style/AppTheme_translucent"/>
+            android:theme="@style/AppTheme_translucent" />
         <activity
             android:name=".exercise.CalendarDay"
             android:exported="false"
-            android:windowSoftInputMode="adjustNothing"/>
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".Calendar"
             android:exported="false" />
