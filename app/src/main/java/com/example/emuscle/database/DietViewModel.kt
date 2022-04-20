@@ -13,7 +13,7 @@ class DietViewModel(application: Application): AndroidViewModel(application) {
 
 
     init {
-        val dataAccessObject = EmuscleDB.getDB(application).exerciseDao()
+        val dataAccessObject = EmuscleDB.getInstance(application).exerciseDao()
         repository = DietRepository(dataAccessObject)
     }
 
