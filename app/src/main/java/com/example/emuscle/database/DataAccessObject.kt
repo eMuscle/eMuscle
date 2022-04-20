@@ -6,6 +6,8 @@ import androidx.room.*
 @Dao
 interface DataAccessObject {
 
+    //Exercise section
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addExercise(exercise: Exercise)
 
@@ -35,8 +37,12 @@ interface DataAccessObject {
     @Query("SELECT * FROM diet_table WHERE day = :day")
     fun getDietByDay(day: String): LiveData<List<Diet>>
 
+    //User section
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addUser(user: User)
 
-
+    @Query("SELECT * FROM user_table WHERE id = (SELECT max(id) FROM user_table)")
+    fun getLastRecordUser(): User
 
 }
