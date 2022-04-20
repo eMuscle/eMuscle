@@ -12,7 +12,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
     private val repository: UserRepository
 
     init {
-        val dataAccessObject = EmuscleDB.getDB(application).exerciseDao()
+        val dataAccessObject = EmuscleDB.getInstance(application).exerciseDao()
         repository = UserRepository(dataAccessObject)
     }
 

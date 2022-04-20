@@ -11,7 +11,6 @@ import com.example.emuscle.database.User
 import com.example.emuscle.database.UserViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class Profile : AppCompatActivity() {
@@ -23,6 +22,7 @@ class Profile : AppCompatActivity() {
         val heightField = findViewById<EditText>(R.id.editTextPituus)
         val weightField = findViewById<EditText>(R.id.editTextPaino)
         val bmiField = findViewById<TextView>(R.id.textViewBMI)
+        val bodyFatField = findViewById<EditText>(R.id.editTextBodyFat)
         val btnSave = findViewById<Button>(R.id.btnSave)
 
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
@@ -32,6 +32,7 @@ class Profile : AppCompatActivity() {
             val userData = mUserViewModel.getUserData()
             weightField.append(userData.weight)
             heightField.append(userData.height)
+            bodyFatField.append(userData.bodyFat)
 
             if(heightField.text.isNotEmpty() && weightField.text.isNotEmpty()) {
                 val height = heightField.text.toString().toFloat()/100
@@ -45,13 +46,14 @@ class Profile : AppCompatActivity() {
 
         btnSave.setOnClickListener {
             if(heightField.text.isNotEmpty() && weightField.text.isNotEmpty()) {
-                val height = heightField.text.toString().toFloat()/100
+                val height = heightField.text.toString()
                 val weight = weightField.text.toString()
+                val bodyFat = bodyFatField.text.toString()
 
-                val bmi = weight.toFloat() / (height * height)
+                val bmi = weight.toFloat() / (height.toFloat()/100 * height.toFloat()/100)
                 bmiField.text = String.format("%.2f", bmi)
 
-                val userObject = User(0, height.toString(), weight,14.toString())
+                val userObject = User(0, height, weight, bodyFat)
                 mUserViewModel.addUser(userObject)
             }
         }
