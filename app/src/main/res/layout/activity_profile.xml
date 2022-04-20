@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15sp"
                 android:text="Paino:"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textAlignment="textEnd"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15sp"
                 android:text="Pituus:"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textAlignment="textEnd"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15sp"
                 android:text="BMI:"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textAlignment="textEnd"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15sp"
                 android:text="BodyFat:"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textAlignment="textEnd"
                 android:textSize="30sp"
                 android:textStyle="bold" />
