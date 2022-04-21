@@ -1,7 +1,6 @@
 package com.example.emuscle.database
 
-import androidx.lifecycle.LiveData
-
+//Väliluokka, joka ohjaa UserViewModelissa olevat funktiot tietokantaan
 class UserRepository (private val dataAccessObject: DataAccessObject) {
 
     suspend fun addUser(user: User) {

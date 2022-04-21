@@ -22,6 +22,9 @@ class ExerciseViewModel(application: Application): AndroidViewModel(application)
         return repository.getExercisesByDay(day)
     }
 
+    //Kaikki alla olevat tietokantaoperaatiot suoritetaan korutiinissa, jotta se ei estä MainThreadin suoritusta
+    //Funktiot tekevät suoritukset tietokantaan repository luokan kautta. Repository luokan käyttäminen on hyvää käytäntöä
+
     fun addExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addExercise(exercise)

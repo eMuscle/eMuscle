@@ -11,21 +11,23 @@ import com.example.emuscle.database.Diet
 import com.example.emuscle.exercise.ListAdapter
 import kotlinx.android.synthetic.main.diet_row.view.*
 
-class DietListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class DietListAdapter: RecyclerView.Adapter<DietListAdapter.MyViewHolder>() {
 
+    //Luodaan lista päivän aterioista
     private var dietList = emptyList<Diet>()
 
+    //Tarpeellinen class onCreateViewHolder funktiolle
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.MyViewHolder {
-        return ListAdapter.MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.diet_row, parent, false)
-        )
+    //Funktio joka luo uuden rivin RecyclerViewiin käyttäen tiedostoa diet_row.xml
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.diet_row, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ListAdapter.MyViewHolder, position: Int) {
+    //Funktio joka välittää painetun harjoituksen tiedot DietPopUpille
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = dietList[position]
         holder.itemView.TVTime.text = currentItem.time
         holder.itemView.TVFood.text = currentItem.food
@@ -43,10 +45,12 @@ class DietListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         }
     }
 
+    //Funktio joka kertoo aterioiden määrän. Adapterin kirjastossa
     override fun getItemCount(): Int {
         return dietList.size
     }
 
+    //Funktio asettaa listan RecyclerViewiin. Adapterin kirjastossa
     fun setData(diet: List<Diet>) {
         this.dietList = diet
         notifyDataSetChanged()

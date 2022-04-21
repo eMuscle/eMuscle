@@ -37,6 +37,7 @@ class CalendarDay : AppCompatActivity() {
 
         //Luodaan ViewModel ExerciseViewModel luokasta
         mExerciseViewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
+        //Tutkitaan tietokannan Exercise taulun muutoksia. Jos tulee muutos, RecyclerView päivittyy
         mExerciseViewModel.getExercisesByDay(id).observe(this) { exercise ->
             adapter.setData(exercise)
         }

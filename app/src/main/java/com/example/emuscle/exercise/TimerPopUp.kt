@@ -45,11 +45,9 @@ class TimerPopUp : AppCompatActivity() {
         popUpStartButton.setOnClickListener {
             if(popUpStartButton.text == "Start") {
                 startTimer(timeInput, popUpStartButton)
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(dpToPx(300), dpToPx(65))
                 popUpStartButton.text = "Pause"
             } else {    //Pysäyttää timerin
                 pauseTimer()
-                popUpStartButton.layoutParams = LinearLayout.LayoutParams(dpToPx(200), dpToPx(65))
                 popUpStartButton.text = "Start"
             }
         }
@@ -70,10 +68,11 @@ class TimerPopUp : AppCompatActivity() {
 
         //Resettaa timerin takaisin 30 sekuntiin
         resetButton.setOnClickListener {
-            timeInput.text = 30.toString()
-            popUpStartButton.text = "Start"
+            if(popUpStartButton.text == "Start") {
+                timeInput.text = 30.toString()
+                popUpStartButton.text = "Start"
+            }
         }
-
     }
 
     //Funktio joka käynnistää timerin
@@ -86,7 +85,6 @@ class TimerPopUp : AppCompatActivity() {
                 Toast.makeText(this@TimerPopUp,"Time up!",Toast.LENGTH_SHORT).show()
                 input.text = 30.toString()
                 btn.text = "Start"
-                btn.layoutParams = LinearLayout.LayoutParams(dpToPx(200), dpToPx(65))
             }
             //Sekunti näkymä päivittyy ruudulle joka sekunti
             override fun onTick(millisUntilFinished: Long) {

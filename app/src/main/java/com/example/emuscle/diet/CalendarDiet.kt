@@ -13,6 +13,8 @@ class CalendarDiet : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar_diet)
         val calendarDietView = findViewById<CalendarView>(R.id.calendarDietView)
+
+        //Tarkkailee kalenterin klikattua päivää ja tekee siitä päivämäärästä id:n ja aukaisee sen päivämäärän diet näkymän
         calendarDietView.setOnDateChangeListener { calendar, year, mont, day ->
             val intent = Intent(this,  CalendarDietDay::class.java)
             val month = mont + 1

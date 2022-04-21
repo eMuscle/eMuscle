@@ -28,7 +28,8 @@
             android:theme="@style/AppTheme_translucent" />
         <activity
             android:name=".diet.CalendarDietDay"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".diet.CalendarDiet"
             android:exported="false" />
@@ -41,7 +42,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".Calendar"
+            android:name=".exercise.Calendar"
             android:exported="false" />
         <activity
             android:name=".MainMenu"

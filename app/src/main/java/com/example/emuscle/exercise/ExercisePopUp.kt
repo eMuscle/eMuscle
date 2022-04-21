@@ -15,7 +15,7 @@ import com.example.emuscle.database.ExerciseViewModel
 
 class ExercisePopUp : AppCompatActivity() {
 
-    //ExerciseViewModel muuttujan luominen (?)
+    //ExerciseViewModel alustaminen
     private lateinit var mExerciseViewModel: ExerciseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

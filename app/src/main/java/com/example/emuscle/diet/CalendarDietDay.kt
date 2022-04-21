@@ -18,20 +18,25 @@ class CalendarDietDay : AppCompatActivity() {
         setContentView(R.layout.activity_calendar_diet_day)
 
         val button = findViewById<Button>(R.id.buttonForFood)
+
+        //Vastaanottaa stringinä päiväkohtaisen id:n arvon
         val id = intent.getStringExtra("id").toString()
 
-        //RecyclerView setup
+        //Luodaan muuttuja adapter joka on tyyppiä ListAdapter
         val adapter = DietListAdapter()
         val dietLayout = findViewById<RecyclerView>(R.id.diet_recycler_view)
+        //RecyclerViewille määritetään adapter
         dietLayout.adapter = adapter
         dietLayout.layoutManager = LinearLayoutManager(this)
 
+        //Luodaan ViewModel DietViewModel luokasta
         mDietViewModel = ViewModelProvider(this)[DietViewModel::class.java]
-
+        //Tutkitaan tietokannan Diet taulun muutoksia. Jos tulee muutos, RecyclerView päivittyy
         mDietViewModel.getDietByDay(id).observe(this) { diet ->
             adapter.setData(diet)
         }
 
+        //Avaa DietPopUp näkymän
         button.setOnClickListener {
             val intent = Intent(this, DietPopUp::class.java)
             intent.putExtra("day", id)

@@ -20,7 +20,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     }
 
-    //Funktio joka luo uuden rivin RecyclerViewiin käyttäen exercise_row-xml
+    //Funktio joka luo uuden rivin RecyclerViewiin käyttäen tiedostoa exercise_row.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.exercise_row, parent, false))
     }

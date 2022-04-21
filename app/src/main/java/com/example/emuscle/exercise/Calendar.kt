@@ -1,10 +1,10 @@
-package com.example.emuscle
+package com.example.emuscle.exercise
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CalendarView
-import com.example.emuscle.exercise.CalendarDay
+import com.example.emuscle.R
 
 class Calendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

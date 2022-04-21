@@ -11,7 +11,6 @@ class DietViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository: DietRepository
 
-
     init {
         val dataAccessObject = EmuscleDB.getInstance(application).exerciseDao()
         repository = DietRepository(dataAccessObject)
@@ -20,6 +19,9 @@ class DietViewModel(application: Application): AndroidViewModel(application) {
     fun getDietByDay(day: String): LiveData<List<Diet>> {
         return repository.getDietByDay(day)
     }
+
+    //Kaikki alla olevat tietokantaoperaatiot suoritetaan korutiinissa, jotta se ei estä MainThreadin suoritusta
+    //Funktiot tekevät suoritukset tietokantaan repository luokan kautta. Repository luokan käyttäminen on hyvää käytäntöä
 
     fun addDiet(diet: Diet){
         viewModelScope.launch(Dispatchers.IO) {

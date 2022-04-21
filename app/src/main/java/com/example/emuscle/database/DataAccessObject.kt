@@ -3,10 +3,11 @@ package com.example.emuscle.database
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
+//Määritetään tarvittavat SQL komennot
 @Dao
 interface DataAccessObject {
 
-    //Exercise section
+    //Exercise osio
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addExercise(exercise: Exercise)
@@ -23,7 +24,7 @@ interface DataAccessObject {
     @Query("SELECT * FROM exercise_table WHERE day = :day")
     fun getExercisesByDay(day: String): LiveData<List<Exercise>>
 
-    //Diet section starts
+    //Diet osio
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addDiet(diet: Diet)
@@ -37,7 +38,7 @@ interface DataAccessObject {
     @Query("SELECT * FROM diet_table WHERE day = :day")
     fun getDietByDay(day: String): LiveData<List<Diet>>
 
-    //User section
+    //User osio
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(user: User)

@@ -20,6 +20,9 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         return repository.getUserData()
     }
 
+    //Kaikki alla olevat tietokantaoperaatiot suoritetaan korutiinissa, jotta se ei estä MainThreadin suoritusta
+    //Funktiot tekevät suoritukset tietokantaan repository luokan kautta. Repository luokan käyttäminen on hyvää käytäntöä
+
     fun addUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)

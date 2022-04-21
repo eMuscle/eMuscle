@@ -2,6 +2,7 @@ package com.example.emuscle.database
 
 import androidx.lifecycle.LiveData
 
+//Väliluokka, joka ohjaa ExerciseViewModelissa olevat funktiot tietokantaan
 class ExerciseRepository(private val dataAccessObject: DataAccessObject) {
 
     val readAllData: LiveData<List<Exercise>> = dataAccessObject.readAllData()
