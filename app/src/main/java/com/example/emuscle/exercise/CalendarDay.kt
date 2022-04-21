@@ -11,43 +11,52 @@ import com.example.emuscle.R
 import com.example.emuscle.database.ExerciseViewModel
 
 class CalendarDay : AppCompatActivity() {
+
+    //Exercise database muuttujan luominen
     private lateinit var mExerciseViewModel: ExerciseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar_day)
 
+        //Vastaanottaa stringinä päiväkohtaisen id:n arvon
         val id = intent.getStringExtra("id").toString()
 
+        //Haetaan käyttöliittymän widgettien id ja asetetaan ne muuttujiin
         val dateText = findViewById<TextView>(R.id.date)
+        val buttonExercise = findViewById<Button>(R.id.buttonForExercise)
+        val timerPopup = findViewById<Button>(R.id.timerbutton)
 
-        //RecyclerView setup
+        //RecyclerViewin alustus
+        //Luodaan muuttuja adapter joka on tyyppiä ListAdapter
         val adapter = ListAdapter()
         val exerciseLayout = findViewById<RecyclerView>(R.id.recycler_view)
+        //RecyclerViewille määritetään adapter
         exerciseLayout.adapter = adapter
         exerciseLayout.layoutManager = LinearLayoutManager(this)
 
-        //ExerciseViewModel
+        //Luodaan ViewModel ExerciseViewModel luokasta
         mExerciseViewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
         mExerciseViewModel.getExercisesByDay(id).observe(this) { exercise ->
             adapter.setData(exercise)
         }
 
+        //Vastaanotetun päivämäärän id string asetetaan teksti widgettiin
         dateText.text = id
 
-        val buttonExercise = findViewById<Button>(R.id.buttonForExercise)
+        //Avaa Exercise popup näkymän
         buttonExercise.setOnClickListener{
             val intent = Intent(this, ExercisePopUp::class.java)
+            //Vie päivämäärä id:tä Exercise popup näkymälle
             intent.putExtra("id", id)
             startActivity(intent)
         }
 
-        val timerPopup = findViewById<Button>(R.id.timerbutton)
+        //Avaa Timer popup näkymän
         timerPopup.setOnClickListener {
             val intent = Intent(this, TimerPopUp::class.java)
             startActivity(intent)
         }
-
 
     }
 }
