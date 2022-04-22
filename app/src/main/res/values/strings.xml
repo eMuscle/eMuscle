@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">eMuscle</string>
+    <string name="program">program</string>
+    <string name="calendar">Calendar</string>
+    <string name="profile">profile</string>
+    <string name="create">Create</string>
+    <string name="login">Login</string>
+    <string name="start">Start</string>
+    <string name="kg">Kg</string>
+    <string name="add_new_exercise">Add new exercise</string>
+    <string name="reps">reps</string>
+    <string name="sets">sets</string>
+    <string name="exercise">exercise</string>
+    <string name="diet">Diet</string>
 </resources>

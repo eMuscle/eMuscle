@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/rowLayout">
+
+    <TextView
+        android:id="@+id/TVExercise"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TVSets"
+        android:layout_width="30sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/TVReps"
+        android:layout_width="30sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/TVWeight"
+        android:layout_width="30sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:text="0" />
+</LinearLayout>
