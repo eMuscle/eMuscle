@@ -11,7 +11,7 @@
         android:layout_width="90sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textColor="@color/text_color"
         android:text="TextView" />
 
@@ -20,7 +20,7 @@
         android:layout_width="160sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textColor="@color/text_color"
         android:text="TextView" />
 
@@ -29,7 +29,7 @@
         android:layout_width="30sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textColor="@color/text_color"
         android:text="0" />
 

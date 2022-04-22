@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/TVExercise"
-            android:layout_width="220sp"
+            android:layout_width="210sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Exercise"
