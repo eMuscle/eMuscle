@@ -9,6 +9,7 @@ import com.example.emuscle.R
 class Calendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0, 0)
         setContentView(R.layout.activity_calendar)
 
         //Haetaan käyttöliittymän kalenterin id ja asetetaan se muuttujaan
@@ -23,5 +24,11 @@ class Calendar : AppCompatActivity() {
             intent.putExtra("id", id)
             startActivity(intent)
         }
+    }
+
+    //Käynnistää animaation
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 }

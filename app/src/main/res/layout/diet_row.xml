@@ -11,8 +11,7 @@
         android:layout_width="90sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
-        android:textColor="@color/text_color"
+        android:textSize="22sp"
         android:text="TextView" />
 
     <TextView
@@ -20,8 +19,7 @@
         android:layout_width="160sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
-        android:textColor="@color/text_color"
+        android:textSize="22sp"
         android:text="TextView" />
 
     <TextView
@@ -29,8 +27,7 @@
         android:layout_width="30sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="25sp"
-        android:textColor="@color/text_color"
+        android:textSize="22sp"
         android:text="0" />
 
 </LinearLayout>

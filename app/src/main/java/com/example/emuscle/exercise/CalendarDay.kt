@@ -17,8 +17,8 @@ class CalendarDay : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0, 0)
         setContentView(R.layout.activity_calendar_day)
-
         //Vastaanottaa stringinä päiväkohtaisen id:n arvon
         val id = intent.getStringExtra("id").toString()
 
@@ -58,6 +58,11 @@ class CalendarDay : AppCompatActivity() {
             val intent = Intent(this, TimerPopUp::class.java)
             startActivity(intent)
         }
+    }
 
+    //Käynnistää animaation
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 }

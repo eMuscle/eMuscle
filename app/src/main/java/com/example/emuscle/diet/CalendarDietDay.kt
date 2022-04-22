@@ -15,6 +15,7 @@ class CalendarDietDay : AppCompatActivity() {
     private lateinit var mDietViewModel: DietViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0, 0)
         setContentView(R.layout.activity_calendar_diet_day)
 
         val button = findViewById<Button>(R.id.buttonForFood)
@@ -42,5 +43,11 @@ class CalendarDietDay : AppCompatActivity() {
             intent.putExtra("day", id)
             startActivity(intent)
         }
+    }
+
+    //Käynnistää animaation
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 }
