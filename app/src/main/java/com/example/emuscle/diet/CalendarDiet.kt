@@ -11,6 +11,7 @@ import com.example.emuscle.R
 class CalendarDiet : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0, 0)
         setContentView(R.layout.activity_calendar_diet)
         val calendarDietView = findViewById<CalendarView>(R.id.calendarDietView)
 
@@ -22,5 +23,11 @@ class CalendarDiet : AppCompatActivity() {
             intent.putExtra("id", id)
             startActivity(intent)
         }
+    }
+
+    //Käynnistää animaation
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 }
