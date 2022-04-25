@@ -1,16 +1,21 @@
 package com.example.emuscle.exercise
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.NotificationCompat
 import com.example.emuscle.R
-import kotlin.math.roundToInt
 
 
 class TimerPopUp : AppCompatActivity() {
@@ -24,6 +29,7 @@ class TimerPopUp : AppCompatActivity() {
         //Animaatio timerille
         overridePendingTransition(0, 0)
         setContentView(R.layout.activity_timer_pop_up)
+        val day = intent.getStringExtra("id").toString()
 
         val popUpStartButton = findViewById<Button>(R.id.popup_window_start_button)
         val popupWindowBackground = findViewById<ConstraintLayout>(R.id.timer_window_background)
@@ -44,7 +50,7 @@ class TimerPopUp : AppCompatActivity() {
         //Käynnistää timerin
         popUpStartButton.setOnClickListener {
             if(popUpStartButton.text == "Start") {
-                startTimer(timeInput, popUpStartButton)
+                startTimer(timeInput, popUpStartButton, day)
                 popUpStartButton.text = "Pause"
             } else {    //Pysäyttää timerin
                 pauseTimer()
@@ -76,13 +82,14 @@ class TimerPopUp : AppCompatActivity() {
     }
 
     //Funktio joka käynnistää timerin
-    private fun startTimer(input : TextView, btn: Button) {
+    private fun startTimer(input : TextView, btn: Button, day: String) {
 
         timer = input.text.toString().toLong() * 1000
         countDownTimer = object : CountDownTimer(timer,1000){
             //Funktio joka suoritetaan kun ajastin menee nollaan
             override fun onFinish() {
                 Toast.makeText(this@TimerPopUp,"Time up!",Toast.LENGTH_SHORT).show()
+                addNotification(day)
                 input.text = 30.toString()
                 btn.text = "Start"
             }
@@ -106,16 +113,39 @@ class TimerPopUp : AppCompatActivity() {
         input.text = format
     }
 
-    //Funktio joilla saadaan oikeat mittasuhteet käyttöliittymään
-    fun dpToPx(dp: Int): Int {
-        val density: Float = resources
-            .displayMetrics.density
-        return (dp.toFloat() * density).roundToInt()
-    }
-
     //Käynnistää animaation ja sulkee timerin
     override fun onBackPressed() {
         finish()
         overridePendingTransition(0, 0)
+    }
+
+    private fun addNotification(day: String) {
+        val channelID = "eMuscleChannel"
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationChannel = NotificationChannel(channelID, "test", NotificationManager.IMPORTANCE_HIGH)
+        notificationChannel.enableLights(true)
+        notificationChannel.enableVibration(false)
+        manager.createNotificationChannel(notificationChannel)
+
+        val builder: NotificationCompat.Builder = NotificationCompat.Builder(this, channelID)
+            .setSmallIcon(R.drawable.ic_alarm) //set icon for notification
+            .setContentTitle("Timer") //set title of notification
+            .setContentText("Time to lift some iron!") //this is notification message
+            .setAutoCancel(true) // makes auto cancel of notification
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT) //set priority of notification
+
+        val notificationIntent = Intent(this, CalendarDay::class.java)
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        notificationIntent.putExtra("day", day)
+
+        val pendingIntent = PendingIntent.getActivity(
+            this, 0, notificationIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        builder.setContentIntent(pendingIntent)
+
+
+        // Add as notification
+        manager.notify(0, builder.build())
     }
 }

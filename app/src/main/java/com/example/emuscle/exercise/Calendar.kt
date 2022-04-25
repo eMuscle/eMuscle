@@ -22,6 +22,7 @@ class Calendar : AppCompatActivity() {
             val id = "$day/$month/$year"
             //Lähettää päivän id:n arvon stringinä seuraavalle näkymälle
             intent.putExtra("id", id)
+            intent.putExtra("day", "null")
             startActivity(intent)
         }
     }

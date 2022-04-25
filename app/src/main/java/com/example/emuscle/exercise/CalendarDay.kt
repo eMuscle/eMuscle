@@ -20,7 +20,11 @@ class CalendarDay : AppCompatActivity() {
         overridePendingTransition(0, 0)
         setContentView(R.layout.activity_calendar_day)
         //Vastaanottaa stringinä päiväkohtaisen id:n arvon
-        val id = intent.getStringExtra("id").toString()
+        var id = intent.getStringExtra("id").toString()
+        val day = intent.getStringExtra("day").toString()
+
+        if (day != "null")
+            id = day
 
         //Haetaan käyttöliittymän widgettien id ja asetetaan ne muuttujiin
         val dateText = findViewById<TextView>(R.id.date)
@@ -56,6 +60,7 @@ class CalendarDay : AppCompatActivity() {
         //Avaa Timer popup näkymän
         timerPopup.setOnClickListener {
             val intent = Intent(this, TimerPopUp::class.java)
+            intent.putExtra("id", id)
             startActivity(intent)
         }
     }

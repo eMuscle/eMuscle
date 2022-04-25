@@ -20,6 +20,7 @@ class Profile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(0,0)
         setContentView(R.layout.activity_profile)
 
         //Haetaan käyttöliittymän widgeteiden id:t ja asetetaan ne muuttujiin
@@ -64,6 +65,11 @@ class Profile : AppCompatActivity() {
                 mUserViewModel.addUser(userObject)
             }
         }
+    }
 
+    //Käynnistää animaation
+    override fun onBackPressed() {
+        finish()
+        overridePendingTransition(0, 0)
     }
 }
